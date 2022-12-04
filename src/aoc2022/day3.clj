@@ -5,13 +5,12 @@
 
 (def file "input3.txt")
 
-
 (defn split-middle
   [str]
   (let [strlen (count str)
         f (subs str 0 (/ strlen 2))
         l (subs str (/ strlen 2))]
-[f l]))
+    [f l]))
 
 (defn common-letter
   [groups]
@@ -41,7 +40,6 @@
          (reduce +)
          )))
 
-
 (defn mk-groups
   [coll]
   (->> (map-indexed vector coll)
@@ -59,4 +57,3 @@
          (map common-letter)
          (map mk-prio)
          (reduce +))))
-
