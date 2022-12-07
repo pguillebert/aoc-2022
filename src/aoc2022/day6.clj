@@ -1,7 +1,5 @@
 (ns aoc2022.day6
-  (:require [clojure.java.io :as io]
-            [clojure.string :as str]
-            [clojure.set :as set]))
+  (:require [clojure.java.io :as io]))
 
 (def file "input6.txt")
 
@@ -19,6 +17,5 @@
   (let [data (-> (io/resource file)
                  (slurp))
         windows (partition nbchars 1 data)
-        pos (find-pred-pos (partial find-all-different nbchars) windows)
-        ]
+        pos (find-pred-pos (partial find-all-different nbchars) windows)]
     (+ pos nbchars)))
